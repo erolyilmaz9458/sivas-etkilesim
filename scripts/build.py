@@ -101,23 +101,30 @@ def page_shell(title, description, canonical_path, body, extra_head=""):
 </html>'''
 
 
-def cover_media(a):
+def cover_media(a, linkable=True):
+    # linkable=False: kullanilir when the cover already sits inside an outer <a>
+    # (kart linki), cunku HTML'de <a> icinde <a> geçersizdir ve tarayici disaridaki
+    # linki erken kapatir, tum kart duzenini bozar.
     svg = cover_svg(a['category'], a['id'])
     src_url = a.get('source_image_url')
     if not src_url:
         return svg
+    if linkable:
+        credit = f'<a href="{esc(a["source_url"])}" rel="nofollow noopener" target="_blank">{esc(a.get("source_name",""))}</a>'
+    else:
+        credit = f'<span>{esc(a.get("source_name",""))}</span>'
     return f'''<div class="cover-wrap">
   <img class="src-photo" src="{esc(src_url)}" alt="" loading="lazy" referrerpolicy="no-referrer"
        onerror="this.closest('.cover-wrap').classList.add('img-failed')">
   <div class="cover-fallback">{svg}</div>
-  <p class="photo-credit">Fotoğraf: <a href="{esc(a['source_url'])}" rel="nofollow noopener" target="_blank">{esc(a.get('source_name',''))}</a></p>
+  <p class="photo-credit">Fotoğraf: {credit}</p>
 </div>'''
 
 
 def article_card(a, featured=False):
     cls = "card card-featured" if featured else "card"
     return f'''<a class="{cls}" href="/haberler/{esc(a['id'])}/">
-  <div class="card-cover">{cover_media(a)}</div>
+  <div class="card-cover">{cover_media(a, linkable=False)}</div>
   <div class="card-body">
     <span class="badge">{esc(a['category'])}</span>
     <h2>{esc(a['title'])}</h2>
