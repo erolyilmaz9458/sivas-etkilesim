@@ -171,3 +171,45 @@ time {
   .article h1 { font-size: 26px; }
   .article-body p { font-size: 17px; }
 }
+
+/* Kaynak fotoğrafı + otomatik SVG geri düşüş */
+.cover-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 320;
+  overflow: hidden;
+  background: var(--maroon-dark);
+}
+
+.cover-wrap .src-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-wrap .cover-fallback { display: none; }
+.cover-wrap .cover-fallback svg { display: block; width: 100%; height: 100%; }
+
+.cover-wrap.img-failed .src-photo { display: none; }
+.cover-wrap.img-failed .cover-fallback { display: block; }
+.cover-wrap.img-failed .photo-credit { display: none; }
+
+.cover-wrap .photo-credit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 3px 8px;
+  background: rgba(38, 34, 32, 0.65);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 10.5px;
+}
+
+.cover-wrap .photo-credit a { color: #fff; text-decoration: underline; }
+
+.card-featured .card-cover,
+.card-featured .cover-wrap { height: 100%; aspect-ratio: auto; }
+
+.article-cover .cover-wrap { aspect-ratio: 16 / 9; border-radius: 0; }

@@ -11,7 +11,8 @@
     ],
     "source_name": "Fanatik",
     "source_url": "https://www.fanatik.com.tr/sivasspor/sivasspor-aaron-appindangoyenin-sozlesmesini-yeniledi-2630088",
-    "published_at": "2026-08-09T18:30:00+03:00"
+    "published_at": "2026-08-09T18:30:00+03:00",
+    "source_image_url": "https://image.fanatik.com.tr/i/fanatik/75/1200x675/6a4e60b8ee35778e659fb56e.jpg"
   },
   {
     "id": "zara-bugday-tarlasi-yangin",
@@ -26,7 +27,8 @@
     ],
     "source_name": "Bursa Hakimiyet",
     "source_url": "https://www.bursahakimiyet.com.tr/gundem/sivas-ta-bugday-tarlasinda-yangin-cikti-dumanlar-trafik-kazasina-neden-oldu-1-yarali-1679447",
-    "published_at": "2026-08-09T15:10:00+03:00"
+    "published_at": "2026-08-09T15:10:00+03:00",
+    "source_image_url": "https://www.bursahakimiyet.com.tr/cdn/7eSn5tWYQp3Lvk369EQZiUXB6TU=/1200x630/webp/2026/07/29/sivas-ta-bugday-tarlasinda-yangin-cikti-dumanlar-trafik-kazasina-neden-oldu-1-yarali-1785345046-817_large.webp"
   },
   {
     "id": "cumhuriyet-universitesi-kene-gezici-kumes",
@@ -41,6 +43,7 @@
     ],
     "source_name": "Haberturk",
     "source_url": "https://www.haberturk.com/gundem/keneyle-mucadelede-gezici-tavuk-kumesi-3897163",
-    "published_at": "2026-08-09T11:45:00+03:00"
+    "published_at": "2026-08-09T11:45:00+03:00",
+    "source_image_url": "https://im.haberturk.com/l/2026/07/08/ver1783523376/3897163/jpg/1200x628"
   }
 ]

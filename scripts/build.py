@@ -101,10 +101,23 @@ def page_shell(title, description, canonical_path, body, extra_head=""):
 </html>'''
 
 
+def cover_media(a):
+    svg = cover_svg(a['category'], a['id'])
+    src_url = a.get('source_image_url')
+    if not src_url:
+        return svg
+    return f'''<div class="cover-wrap">
+  <img class="src-photo" src="{esc(src_url)}" alt="" loading="lazy" referrerpolicy="no-referrer"
+       onerror="this.closest('.cover-wrap').classList.add('img-failed')">
+  <div class="cover-fallback">{svg}</div>
+  <p class="photo-credit">Fotoğraf: <a href="{esc(a['source_url'])}" rel="nofollow noopener" target="_blank">{esc(a.get('source_name',''))}</a></p>
+</div>'''
+
+
 def article_card(a, featured=False):
     cls = "card card-featured" if featured else "card"
     return f'''<a class="{cls}" href="/haberler/{esc(a['id'])}/">
-  <div class="card-cover">{cover_svg(a['category'], a['id'])}</div>
+  <div class="card-cover">{cover_media(a)}</div>
   <div class="card-body">
     <span class="badge">{esc(a['category'])}</span>
     <h2>{esc(a['title'])}</h2>
@@ -140,7 +153,7 @@ def build_article(a):
   <span class="badge">{esc(a['category'])}</span>
   <h1>{esc(a['title'])}</h1>
   <time datetime="{esc(a['published_at'])}">{fmt_date(a['published_at'])}</time>
-  <div class="article-cover">{cover_svg(a['category'], a['id'])}</div>
+  <div class="article-cover">{cover_media(a)}</div>
   <div class="article-body">
     {body_html}
   </div>
