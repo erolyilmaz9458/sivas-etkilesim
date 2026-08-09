@@ -168,6 +168,25 @@ def build_article(a):
     <p>Kaynak: <a href="{esc(a['source_url'])}" rel="nofollow noopener" target="_blank">{esc(a['source_name'])}</a></p>
   </div>
   <p><a class="back-link" href="/">&larr; Tüm haberler</a></p>
+
+  <section class="comments">
+    <h2>Yorumlar</h2>
+    <script src="https://giscus.app/client.js"
+        data-repo="erolyilmaz9458/sivas-etkilesim"
+        data-repo-id="R_kgDOTznnAw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOTznnA84DDBrg"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="tr"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
 </main>'''
     return page_shell(
         f"{a['title']} — {SITE_NAME}",

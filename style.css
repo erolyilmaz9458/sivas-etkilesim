@@ -213,3 +213,14 @@ time {
 .card-featured .cover-wrap { height: 100%; aspect-ratio: auto; }
 
 .article-cover .cover-wrap { aspect-ratio: 16 / 9; border-radius: 0; }
+
+.comments {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.comments h2 {
+  font-size: 22px;
+  margin: 0 0 16px;
+}
